@@ -10,7 +10,7 @@ For developers and those interested in the backend functionality, the API docume
 
 ## Screenshot
 
-![Screenshot of The Volcano Wiki](images/screenshot.png)
+![Screenshot of The Volcano Wiki](screenshot.png)
 
 ## Features
 
