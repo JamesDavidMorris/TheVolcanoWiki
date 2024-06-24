@@ -1,12 +1,12 @@
 {
     "openapi": "3.0.2",
     "info": {
-        "title": "Volcano API",
+        "title": "The Volcano Wiki API",
         "description": "The Volcano API provides access to a comprehensive database of volcanoes. Users can retrieve information about various volcanoes, including their names, locations, eruption histories, and nearby populations. The API supports both public and authenticated endpoints, offering enhanced data for authorized users. Additionally, users can log volcanic activities and retrieve activity logs for specific volcanoes.",
         "version": "1.0.0",
         "termsOfService": "http://swagger.io/terms/",
         "contact": {
-            "email": "n11670576@qut.edu.au"
+            "email": "jamesdavidmorris1990@gmail.com"
         },
         "license": {
             "name": "Apache 2.0",

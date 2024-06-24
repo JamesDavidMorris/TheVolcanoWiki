@@ -5,7 +5,12 @@ Built with a JavaScript-based front end and an Express.js back end, this project
 
 ## Access the Website
 
-You can access the running website [here](http://www.github.com/JamesDavidMorris). This link allows you to explore all the features of The Volcano Wiki live.
+You can access the running website [here](https://thevolcanowiki.onrender.com/). This link allows you to explore all the features of The Volcano Wiki live.
+For developers and those interested in the backend functionality, the API documentation is available via Swagger. You can access it [here](https://thevolcanowiki.onrender.com/api-docs) to test and interact with the API endpoints.
+
+## Screenshot
+
+![Screenshot of The Volcano Wiki](images/screenshot.png)
 
 ## Features
 
@@ -32,4 +37,5 @@ You can access the running website [here](http://www.github.com/JamesDavidMorris
 
 ### Additional Tools
 - **Render**
+- **Clever Cloud**
 - **Swagger Docs**
