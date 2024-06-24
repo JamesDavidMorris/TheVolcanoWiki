@@ -1,0 +1,58 @@
+.volcano-page {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 5px);
+}
+
+.ag-theme-volcano, .ag-grid-container {
+    height: 93px;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.ag-grid-container {
+    margin-top: 80px;
+}
+
+.ag-grid-top-rounded {
+    --ag-wrapper-border-radius: 8px 8px 0 0;
+}
+
+.grid-chart-and-map-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chart-and-map-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-grow: 1;
+    margin-top: 10px;
+}
+
+.chart-and-map-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    margin-top: -1px;
+}
+
+.chart-container, .map-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.chart-container {
+    flex: 1;
+    padding: 20px;
+}
+
+.map-container {
+    flex: 4;
+}

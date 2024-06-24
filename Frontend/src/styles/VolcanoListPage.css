@@ -1,0 +1,40 @@
+.volcanoes-list-page {
+    padding: 20px;
+}
+
+.dropdown-container p {
+    margin-left: auto;
+    align-self: center;
+    padding-top: 15px;
+    padding-right: 22px;
+}
+
+.dropdown-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+    margin-top: 80px;
+    padding: 15px;
+    border-radius: 8px 8px 0 0;
+}
+
+.dropdown-container label {
+    font-size: 19.5px;
+    font-family: 'Calibri', sans-serif;
+    font-weight: bold;
+}
+
+select {
+    cursor: pointer;
+    padding: 5px 10px;
+    margin: 0 5px;
+}
+
+label {
+    padding-right: 10px;
+}
+
+.grid-table {
+    margin-top: -5px;
+}

@@ -1,0 +1,134 @@
+/* Main elements */
+
+.App {
+    background-image: url('../assets/images/background_volcano_1.jpg');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    height: 100vh;
+}
+
+.logo {
+    font-size: 55px;
+    text-align: left;
+    color: #f2e9e4;
+    font-family: 'Foxbot', sans-serif;
+    font-weight: bolder;
+    padding-left: 10px;
+}
+
+body {
+    background: linear-gradient(to right, #1e2f1e, #5b5521);
+}
+
+h2 {
+    color: #f2e9e4;
+}
+
+p {
+    color: #181d1f;
+    font-size: 19.5px;
+    font-family: 'Calibri', sans-serif;
+    font-weight: bold;
+}
+
+/* Title Bar Buttons */
+
+.navigation-button {
+    color: #f2e9e4;
+}
+
+.navigation-button::after {
+    background-color: #f2e9e4;
+}
+
+/* Dropdown */
+
+.dropdown-container {
+    background-color: #B1CBACFF;
+    border: solid 1px #babfc7;
+}
+
+.dropdown {
+    background-color: #A1B99DFF;
+    color: #181d1f;
+    border-color: #91a88e;
+}
+
+.dropdown-container label {
+    color: #181d1f;
+}
+
+/* Login/Register Overlay */
+
+.auth-overlay {
+    background-color: rgba(40, 49, 62, 0.75);
+}
+
+.auth-form {
+    background: #495758;
+}
+
+.auth-form input {
+    background: #3f4d4e;
+    color: #f2e9e4;
+    border: 1px solid rgba(0,0,0,0);
+}
+
+.auth-form input:focus {
+    border: 1px solid #5a6a6b;
+    outline: none;
+}
+
+.auth-form button {
+    background: #536162;
+    color: #f2e9e4;
+}
+
+.auth-form button:hover {
+    background-color: #5a6a6b;
+    color: #f2e9e4;
+}
+
+.auth-form .close-button {
+    border-color: #717f80;
+    background: #495758;
+}
+
+.auth-form .close-button:hover {
+    background: #495758;
+    border-color: #999;
+}
+
+.auth-divider {
+    background-color: #717f80;
+}
+
+.auth-account-text {
+    color: #f2e9e4;
+}
+
+.auth-error {
+    color: #ff4545;
+    font-weight: lighter;
+}
+
+.auth-success {
+    color: #4aa14a;
+    font-weight: lighter;
+}
+
+/* Map */
+
+.map-container {
+    border: solid 1px #babfc7;
+}
+
+/* Chart */
+
+.chart-container {
+    background-color: #b9d6b6;
+    border: solid 1px #babfc7;
+}

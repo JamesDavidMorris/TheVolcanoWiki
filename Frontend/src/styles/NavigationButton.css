@@ -1,0 +1,28 @@
+.navigation-button {
+    position: relative;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    display: inline-block;
+    font-family: 'Calibri', sans-serif;
+    font-weight: normal;
+    margin-right: 10px;
+}
+
+.navigation-button::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease-in-out;
+}
+
+.navigation-button:hover::after {
+    width: 100%;
+}

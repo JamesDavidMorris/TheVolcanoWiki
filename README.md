@@ -9,8 +9,6 @@ You can access the running website [here](http://www.github.com/JamesDavidMorris
 
 ## Features
 
----
-
 - **Browse by Country**: Users can browse a list of countries to find volcanoes located within each.
 - **Advanced Filtering**: Various filters enable users to narrow down their search based on specific criteria.
 - **Detailed Volcano Information**: Each volcano's detail page includes comprehensive information such as last eruptions, elevation, and more.
@@ -20,8 +18,6 @@ You can access the running website [here](http://www.github.com/JamesDavidMorris
 - **User-Centric Front-End Design**: The front end of the application has been designed to ensure a visually appealing and user-friendly interface.
 
 ## Technologies Used
-
----
 
 ### Front End
 - **JavaScript**
@@ -35,6 +31,5 @@ You can access the running website [here](http://www.github.com/JamesDavidMorris
 - **MySQL**
 
 ### Additional Tools
-- **GitHub Pages**
 - **Render**
 - **Swagger Docs**
