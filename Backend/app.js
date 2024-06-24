@@ -20,7 +20,7 @@ var customRouter = require('./routes/custom');
 
 var app = express();
 
-process.env.ACCESS_TOKEN_SECRET = 'your_jwt_secret';
+process.env.ACCESS_TOKEN_SECRET = process.env.ACCESS_TOKEN_SECRET || 'your_jwt_secret';
 
 // Middleware to attach db to request
 app.use((req, res, next) => {
@@ -48,10 +48,10 @@ app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 // API routes with /api prefix
 app.use('/api', indexRouter);
 app.use('/api/users', usersRouter);
-app.use('/api', volcanoesRouter); // Note: this will add routes like /api/countries and /api/volcanoes
+app.use('/api', volcanoesRouter);
 app.use('/api/custom', customRouter);
 
-// Serve React frontend static files
+// Serve React frontend static files from /Frontend/build directory
 app.use(express.static(path.join(__dirname, '../Frontend/build')));
 
 // Catch-all route to serve React frontend (with check to avoid API route interference)
@@ -76,13 +76,19 @@ app.get("/knex", function (req, res, next) {
 
 // Catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  res.status(404).json({ error: 'Not Found' });
+  next(createError(404));
 });
 
 // Error handler
 app.use(function(err, req, res, next) {
   console.error('Error handler:', err.message, err.stack); // Log the error
   res.status(err.status || 500).json({ error: err.message });
+});
+
+// Ensure the application listens on the correct port
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
 
 module.exports = app;
