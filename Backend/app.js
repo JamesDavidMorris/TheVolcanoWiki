@@ -7,9 +7,7 @@ var dotenv = require('dotenv');
 
 dotenv.config(); // Load environment variables from .env file
 
-const jwt = require('jsonwebtoken');
 const knexConfig = require('./knexfile');
-
 const knex = require('knex')(knexConfig[process.env.NODE_ENV || 'development']);
 const cors = require('cors');
 const swaggerUI = require('swagger-ui-express');
@@ -24,10 +22,7 @@ var app = express();
 
 process.env.ACCESS_TOKEN_SECRET = 'your_jwt_secret';
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
-
+// Middleware to attach db to request
 app.use((req, res, next) => {
   req.db = knex;
   next();
@@ -46,9 +41,28 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/', swaggerUI.serve);
-app.get('/', swaggerUI.setup(swaggerDocument));
 
+// Serve Swagger docs at /api-docs
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
+
+// API routes with /api prefix
+app.use('/api', indexRouter);
+app.use('/api/users', usersRouter);
+app.use('/api', volcanoesRouter); // Note: this will add routes like /api/countries and /api/volcanoes
+app.use('/api/custom', customRouter);
+
+// Serve React frontend static files
+app.use(express.static(path.join(__dirname, '../Frontend/build')));
+
+// Catch-all route to serve React frontend (with check to avoid API route interference)
+app.get('*', (req, res, next) => {
+  if (req.originalUrl.startsWith('/api')) {
+    return next();
+  }
+  res.sendFile(path.join(__dirname, '../Frontend/build', 'index.html'));
+});
+
+// Knex version endpoint
 app.get("/knex", function (req, res, next) {
   req.db
       .raw("SELECT VERSION()")
@@ -60,23 +74,15 @@ app.get("/knex", function (req, res, next) {
       });
 });
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/', volcanoesRouter);
-app.use('/custom', customRouter);
-
-// catch 404 and forward to error handler
+// Catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  next(createError(404));
+  res.status(404).json({ error: 'Not Found' });
 });
 
-// error handler
+// Error handler
 app.use(function(err, req, res, next) {
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  res.status(err.status || 500);
-  res.render('error');
+  console.error('Error handler:', err.message, err.stack); // Log the error
+  res.status(err.status || 500).json({ error: err.message });
 });
 
 module.exports = app;

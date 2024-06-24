@@ -236,7 +236,7 @@
     },
     "servers": [
         {
-            "url": "https://thevolcanowiki.onrender.com/"
+            "url": "https://thevolcanowiki.onrender.com/api"
         }
     ],
     "tags": [
